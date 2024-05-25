@@ -11,11 +11,11 @@ const firebaseConfig = {
   storageBucket: "ethio-language-box-9f2e8.appspot.com",
   messagingSenderId: "41373159818",
   appId: "1:41373159818:web:d83762481b0d1c984cf873",
-  measurementId: "G-5XBKWQYTTE"
+  measurementId: "G-5XBKWQYTTE",
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
 const auth = getAuth();
 
-export { db, app, auth }
+export { db, app, auth };
