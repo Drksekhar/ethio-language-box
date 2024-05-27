@@ -13,6 +13,10 @@ import {
 import Home from "./comp/Home";
 import Languages from "./comp/Languages";
 import Culture from "./comp/Culture";
+import Languages2 from "./comp/Languages2";
+import Lang3 from "./comp/Lang3";
+import LangP4 from "./comp/LangP4";
+import Lp4 from "./comp/Lp4";
 export const MyContext = createContext(null);
 
 export default function App() {
@@ -36,9 +40,23 @@ export default function App() {
             <Icon name="translate" />
             Language
           </Menu.Item>
-          <Menu.Item as={Link} to="culture" active={path === "/culture"}>
+          {/* <Menu.Item as={Link} to="culture" active={path === "/culture"}>
             <Icon name="person" /> Culture
           </Menu.Item>
+          <Menu.Item as={Link} to="languages2" active={path === "/languags2"}>
+            <Icon name="list" /> Languages2
+          </Menu.Item>
+          <Menu.Item as={Link} to="lang3" active={path === "lang3"}>
+            <Icon name="phone" /> Lang3
+          </Menu.Item>*/}
+
+          <Menu.Item as={Link} to="langp4" active={path === "langP4"}>
+            <Icon name="language" /> LangP4
+          </Menu.Item>
+          <Menu.Item as={Link} to="LangP4" active={path === "lP4"}>
+            <Icon name="list" /> LP4
+          </Menu.Item>
+
           <Menu.Item onClick={() => setTheme(!theme)}>
             <Icon name={!theme ? "moon" : "sun outline"} />
             {theme ? "dark" : "light"}
@@ -58,7 +76,11 @@ export default function App() {
             <Route path="" element={<Mainmenu />}>
               <Route path="" element={<Home />} />
               <Route path="languages" element={<Languages />} />
-              <Route path="culture" element={<Culture />} />
+              {/*} <Route path="culture" element={<Culture />} />
+              <Route path="languages2" element={<Languages2 />} />
+              <Route path="lang3" element={<Lang3 />} />*/}
+              <Route path="langP4" element={<LangP4 />} />
+              <Route path="lP4" element={<Lp4 />} />
             </Route>
           </Routes>
         </HashRouter>
