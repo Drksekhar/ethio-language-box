@@ -25,7 +25,8 @@ export default function Languages() {
         setList({});
         return;
       }
-      setList(snapshot.val());
+      //setList(snapshot.val());
+      setList(snapshot.val() || {});
     });
   }, []);
 
@@ -62,20 +63,15 @@ export default function Languages() {
 
   return (
     <div>
-      <Grid>
-        <Grid.Row>
-          <Input
-            placeholder={"Enter Language Name"}
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-          />
-        </Grid.Row>
-        <Grid.Row>
-          <Button color="green" onClick={addLanguage}>
-            Add Language
-          </Button>
-        </Grid.Row>
-      </Grid>
+      <Input
+        placeholder={"Enter Language Name"}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        style={{ marginRight: "10px" }}
+      />
+      <Button color="green" onClick={addLanguage}>
+        Add Language
+      </Button>
       <Modal open={id} onClose={closeBox} closeIcon size="mini">
         <Modal.Header style={{ textAlign: "center" }}>
           Change the Language Name
@@ -94,15 +90,17 @@ export default function Languages() {
           <Button color="blue" onClick={saveItem}>
             Save
           </Button>
-          <Button color="blue" onClick={closeBox}>
+          <Button color="grey" onClick={closeBox}>
             Close
           </Button>
         </Modal.Actions>
       </Modal>
       <Table inverted={theme} size="large" unstackable compact>
         <thead>
-          <th>List of Language</th>
-          <th>Action</th>
+          <th style={{ border: "1px solid black", padding: "10px" }}>
+            List of Language
+          </th>
+          <th style={{ border: "1px solid black", padding: "10px" }}>Action</th>
         </thead>
         <tbody>
           {Object.entries(list).map((item) => (
