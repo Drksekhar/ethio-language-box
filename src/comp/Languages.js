@@ -26,7 +26,8 @@ export default function Languages() {
         return;
       }
       //setList(snapshot.val());
-      setList(snapshot.val() || {});
+
+      setList(snapshot.val());
     });
   }, []);
 
