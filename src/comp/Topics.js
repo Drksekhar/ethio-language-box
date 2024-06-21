@@ -86,7 +86,7 @@ export default function Topics() {
               />
             </Form.Field>
             <Form.Field>
-              <Label>Category</Label>
+              <Label>Select the Category</Label>
               <Select
                 value={ctext}
                 onChange={(e, d) => setCtext(d.value)}

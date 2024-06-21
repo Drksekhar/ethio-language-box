@@ -21,7 +21,7 @@ export default function Languages() {
 
   useEffect(() => {
     onValue(ref(db, "data/languages"), (snapshot) => {
-      if (!snapshot.exists) {
+      if (!snapshot.exists()) {
         setList({});
         return;
       }
